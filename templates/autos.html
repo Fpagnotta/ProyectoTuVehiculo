@@ -6,10 +6,10 @@
   {% for auto in autos %}
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{auto.marca_modelo}}</h5>
-      <p class="card-text">{{auto.año}}.</p>
-      <p class="card-text">{{auto.precio}}.</p>
-      <p class="card-text">{{auto.transmision}}.</p>
+      <h5 class="card-title">Marca y modelo: {{auto.marca_modelo}}</h5>
+      <p class="card-text">Año de fabricacion :{{auto.año}}.</p>
+      <p class="card-text">Precio : ${{auto.precio}}.</p>
+      <p class="card-text">Transmision automatica?:{{auto.transmision}}.</p>
     </div>
   </div>
   {% endfor %}

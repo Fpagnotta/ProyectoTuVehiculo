@@ -6,10 +6,10 @@
   {% for camion in camiones %}
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{camion.marca_modelo}}</h5>
-      <p class="card-text">{{camion.año}}.</p>
-      <p class="card-text">{{camion.precio}}.</p>
-      <p class="card-text">{{camion.capacidad}}.</p>
+      <h5 class="card-title">Marca y modelo:{{camion.marca_modelo}}</h5>
+      <p class="card-text">Año de fabricacion:{{camion.año}}.</p>
+      <p class="card-text">Precio:${{camion.precio}}.</p>
+      <p class="card-text">Capacidad de transporte:{{camion.capacidad}}.</p>
     </div>
   </div>
   {% endfor %}    

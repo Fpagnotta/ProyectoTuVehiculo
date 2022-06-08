@@ -54,7 +54,7 @@ def cargar_camiones(request):
             new_camion = Camiones.objects.create(
                  marca_modelo = form.cleaned_data["marca_modelo"],
                  año = form.cleaned_data["año"],
-                 transmision = form.cleaned_data["transmision"],
+                 capacidad = form.cleaned_data["capacidad"],
                  sku = form.cleaned_data["sku"],
                  precio = form.cleaned_data["precio"],
             )
@@ -72,7 +72,7 @@ def cargar_motos(request):
             new_moto = Motos.objects.create(
                  marca_modelo = form.cleaned_data["marca_modelo"],
                  año = form.cleaned_data["año"],
-                 transmision = form.cleaned_data["transmision"],
+                 tipo = form.cleaned_data["tipo"],
                  sku = form.cleaned_data["sku"],
                  precio = form.cleaned_data["precio"],
             )
@@ -81,8 +81,8 @@ def cargar_motos(request):
 
 def buscar_vehiculo(request):
     print(request.GET)
-    autos = Autos.objects.filter(marca_modelo = request.GET["Search"])
     camiones = Camiones.objects.filter(marca_modelo = request.GET["Search"])
+    autos = Autos.objects.filter(marca_modelo = request.GET["Search"])
     motos = Motos.objects.filter(marca_modelo = request.GET["Search"])
     context = {"autos":autos, "camiones": camiones, "motos":motos}
     return render(request,"buscar_vehiculo.html", context = context)

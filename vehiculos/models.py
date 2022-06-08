@@ -6,7 +6,7 @@ from django.db import models
 class Autos(models.Model):
     marca_modelo = models.CharField (max_length=50)
     año = models.FloatField()
-    transmision = models.BooleanField()
+    transmision = models.BooleanField(blank=True)
     sku = models.CharField(max_length=30)
     precio = models.FloatField()
     

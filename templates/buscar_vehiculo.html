@@ -15,4 +15,30 @@
 </div>
 
 {% endfor%}
+
+{% for camion in camiones%}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{camion.marca_modelo}}</h5>
+    <p class="card-text">{{camion.año}}.</p>
+    <p class="card-text">{{camion.precio}}.</p>
+  </div>
+</div>
+
+{% endfor%}
+
+{% for moto in motos%}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{moto.marca_modelo}}</h5>
+    <p class="card-text">{{moto.año}}.</p>
+    <p class="card-text">{{moto.precio}}.</p>
+  </div>
+</div>
+
+{% endfor%}
+
+
+
+
 {% endblock %}
