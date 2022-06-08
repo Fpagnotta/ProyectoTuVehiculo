@@ -78,3 +78,11 @@ def cargar_motos(request):
             )
             context = {"new_moto":new_moto}
         return render (request,'cargar_motos.html',context=context)
+
+def buscar_vehiculo(request):
+    print(request.GET)
+    autos = Autos.objects.filter(marca_modelo = request.GET["Search"])
+    camiones = Camiones.objects.filter(marca_modelo = request.GET["Search"])
+    motos = Motos.objects.filter(marca_modelo = request.GET["Search"])
+    context = {"autos":autos, "camiones": camiones, "motos":motos}
+    return render(request,"buscar_vehiculo.html", context = context)

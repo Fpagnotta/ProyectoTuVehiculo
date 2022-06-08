@@ -44,9 +44,9 @@
                     <a class="nav-link" href="#">Solo admin</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+                <form class="d-flex" role="search" action="/vehiculos/buscar_vehiculos/" method="GET">
+                  <input class="form-control me-2" type="text" placeholder="Nombre del Vehiculo" name="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
               </div>
             </div>
