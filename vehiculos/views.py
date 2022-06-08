@@ -22,7 +22,7 @@ def motos(request):
 def camiones(request):
     camiones = Camiones.objects.all()        
     context={'camiones':camiones}
-    return render(request,'camionetas.html',context=context)
+    return render(request,'camiones.html',context=context)
 
 
 def cargar_autos(request):

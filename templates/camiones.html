@@ -1,0 +1,18 @@
+{% extends 'template_base.html' %}
+
+{% block info %}
+  <h1>CAMIONES</h1>
+
+  {% for camion in camiones %}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{camion.marca_modelo}}</h5>
+      <p class="card-text">{{camion.año}}.</p>
+      <p class="card-text">{{camion.precio}}.</p>
+      <p class="card-text">{{camion.capacidad}}.</p>
+    </div>
+  </div>
+  {% endfor %}    
+
+{% endblock %}
+

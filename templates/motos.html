@@ -4,10 +4,14 @@
   <h1>MOTOS</h1>
 
   {% for moto in motos %}
-    <h2>Marca y modelo : {{moto.marca_modelo}}</h2><br>
-    <h3>Año : {{moto.año}}</h3><br>
-    <h3>Tipo:{{tipo.moto}}</h3><br>
-    <h3>Precio : $ {{moto.precio}}</h3>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{moto.marca_modelo}}</h5>
+      <p class="card-text">{{moto.año}}.</p>
+      <p class="card-text">{{moto.precio}}.</p>
+      <p class="card-text">{{moto.tipo_moto}}.</p>
+    </div>
+  </div>
   {% endfor %}    
 
 {% endblock %}
