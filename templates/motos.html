@@ -1,0 +1,13 @@
+{% extends 'template_base.html' %}
+
+{% block info %}
+  <h1>MOTOS</h1>
+
+  {% for moto in motos %}
+    <h2>Marca y modelo : {{moto.marca_modelo}}</h2><br>
+    <h3>Año : {{moto.año}}</h3><br>
+    <h3>Tipo:{{tipo.moto}}</h3><br>
+    <h3>Precio : $ {{moto.precio}}</h3>
+  {% endfor %}    
+
+{% endblock %}

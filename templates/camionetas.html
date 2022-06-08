@@ -1,0 +1,14 @@
+{% extends 'template_base.html' %}
+
+{% block info %}
+  <h1>CAMIONES</h1>
+
+  {% for camion in camiones %}
+    <h2>Marca y modelo : {{camion.marca_modelo}}</h2><br>
+    <h3>Año : {{camion.año}}</h3><br>
+    <h3>Capacidad de peso:{{camion.capacidad}}</h3><br>
+    <h3>Precio : $ {{camion.precio}}</h3>
+  {% endfor %}    
+
+{% endblock %}
+
