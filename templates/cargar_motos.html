@@ -1,0 +1,27 @@
+{% extends 'template_base.html' %}
+
+{% block info %}
+{% if form %}
+  <h1>CARGA DE MOTOS</h1>
+
+
+<form method="POST" action="">
+  {% csrf_token %}
+  <table>
+  {{form.as_table}}
+  </table>
+  <input type="submit",value="Enviar">
+</form>
+
+{% elif new_auto %}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{new_moto.marca_modelo}}</h5>
+    <p class="card-text">{{new_moto.año}}.</p>
+    <p class="card-text">{{new_moto.precio}}.</p>
+  </div>
+</div>
+
+{% endif%}
+{% endblock %}
