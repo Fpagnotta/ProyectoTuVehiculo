@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block info %} 
+
+
+<div class="alert alert-danger" role="alert">
+    {{errors}}
+  </div>
+
+
+<h2>Enter your credentials to login </h2>
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{form.as_p}}
+  </div>
+  <input type="submit" , value="Submit" />
+</form>
+
+
+{% endblock %}

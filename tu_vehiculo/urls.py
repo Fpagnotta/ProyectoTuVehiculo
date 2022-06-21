@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-from tu_vehiculo.views import index
+from tu_vehiculo.views import index, login_view
 from vehiculos.views import autos,motos,camiones
 
 
@@ -24,6 +24,7 @@ from vehiculos.views import autos,motos,camiones
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name = "index"),
-    path('vehiculos/',include('vehiculos.urls'))
+    path('vehiculos/',include('vehiculos.urls')),
+    path('login/',login_view,name = "login_view"),
 
 ]
