@@ -81,8 +81,8 @@ def cargar_motos(request):
 
 def buscar_vehiculo(request):
     print(request.GET)
-    camiones = Camiones.objects.filter(marca_modelo = request.GET["Search"])
-    autos = Autos.objects.filter(marca_modelo = request.GET["Search"])
-    motos = Motos.objects.filter(marca_modelo = request.GET["Search"])
+    camiones = Camiones.objects.filter(marca_modelo__contains = request.GET["Search"])
+    autos = Autos.objects.filter(marca_modelo__contains = request.GET["Search"])
+    motos = Motos.objects.filter(marca_modelo__contains = request.GET["Search"])
     context = {"autos":autos, "camiones": camiones, "motos":motos}
     return render(request,"buscar_vehiculo.html", context = context)
