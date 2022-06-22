@@ -42,15 +42,18 @@
                       <li><a class="dropdown-item" href="/vehiculos/cargar_camiones">Camiones</a></li>
                     </ul>
                   </li>
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/logout/">Logout</a>
+                  </li>
+                  {% else %}
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login/">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Logout</a>
+                    <a class="nav-link active" aria-current="page" href="/register/">Register</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Register</a>
-                  </li>
+                  {% endif %}
                 </ul>
                 <form class="d-flex" role="search" action="/vehiculos/buscar_vehiculos/" method="GET">
                   <input class="form-control me-2" type="text" placeholder="Nombre del Vehiculo" name="Search" aria-label="Search">
