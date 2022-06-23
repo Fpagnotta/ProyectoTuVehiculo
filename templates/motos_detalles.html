@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block info %}
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Marca y modelo: {{moto.marca_modelo}}</h5>
+    <p class="card-text">Año de fabricacion :{{moto.año}}.</p>
+    <p class="card-text">Precio : ${{moto.precio}}.</p>
+    <p class="card-text">Tipo :{{moto.tipo}}.</p>
+  </div>
+<h5>Desea comprar esta Moto?<a href="" class="btn btn-primary">COMPRAR</a></h5>
+</div>
+
+
+{% endblock %}

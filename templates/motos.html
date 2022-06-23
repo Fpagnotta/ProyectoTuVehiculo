@@ -9,7 +9,8 @@
       <h5 class="card-title">Marca y modelo:{{moto.marca_modelo}}</h5>
       <p class="card-text">Año de fabricacion:{{moto.año}}.</p>
       <p class="card-text">Precio:${{moto.precio}}.</p>
-      <p class="card-text">Tipo:{{moto.tipo_moto}}.</p>
+      <p class="card-text">Tipo:{{moto.tipo}}.</p>
+      <a href="/vehiculos/motos_detalles/{{moto.id}}/" class="btn btn-primary">detalles</a>
     </div>
   </div>
   {% endfor %}    

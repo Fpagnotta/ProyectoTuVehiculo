@@ -86,3 +86,32 @@ def buscar_vehiculo(request):
     motos = Motos.objects.filter(marca_modelo__contains = request.GET["Search"])
     context = {"autos":autos, "camiones": camiones, "motos":motos}
     return render(request,"buscar_vehiculo.html", context = context)
+
+
+def autos_detalles(request, pk):
+    try:
+        autos = Autos.objects.get(id=pk)
+        context = {'auto':autos}
+        return render(request,'autos_detalles.html', context=context)
+    except:
+        context = {'problema':'Hay un problema en cargar este detalle, disculpe las molestias'}
+        return render (request,'autos.html',context=context)    
+
+
+def motos_detalles(request, pk):
+    try:
+        motos = Motos.objects.get(id=pk)
+        context = {'moto':motos}
+        return render(request,'motos_detalles.html', context=context)
+    except:
+        context = {'problema':'Hay un problema en cargar este detalle, disculpe las molestias'}
+        return render (request,'motos.html',context=context)    
+
+def camiones_detalles(request, pk):
+    try:
+        camiones = Camiones.objects.get(id=pk)
+        context = {'camion':camiones}
+        return render(request,'camiones_detalles.html', context=context)
+    except:
+        context = {'problema':'Hay un problema en cargar este detalle, disculpe las molestias'}
+        return render (request,'camiones.html',context=context)    
