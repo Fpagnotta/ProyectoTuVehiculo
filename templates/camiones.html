@@ -3,6 +3,8 @@
 {% block info %}
   <h1>CAMIONES</h1>
 
+  {{mensaje}}
+
   {% for camion in camiones %}
  <div class="">
     <div class="card" style="width: 18rem;">
@@ -12,6 +14,7 @@
         <p class="card-text">Precio:${{camion.precio}}.</p>
         <p class="card-text">Capacidad de transporte:{{camion.capacidad}}.</p>
         <a href="/vehiculos/camiones_detalles/{{camion.id}}/" class="btn btn-primary">detalles</a>
+        <a href="/vehiculos/eliminar_camion/{{camion.id}}/" class="btn btn-danger">eliminar</a>
       </div>
     </div>
 </div> 

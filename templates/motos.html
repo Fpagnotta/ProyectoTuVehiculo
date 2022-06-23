@@ -3,6 +3,8 @@
 {% block info %}
   <h1>MOTOS</h1>
 
+  {{mensaje}}
+
   {% for moto in motos %}
   <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -11,6 +13,7 @@
       <p class="card-text">Precio:${{moto.precio}}.</p>
       <p class="card-text">Tipo:{{moto.tipo}}.</p>
       <a href="/vehiculos/motos_detalles/{{moto.id}}/" class="btn btn-primary">detalles</a>
+      <a href="/vehiculos/eliminar_moto/{{moto.id}}/" class="btn btn-danger">eliminar</a>
     </div>
   </div>
   {% endfor %}    

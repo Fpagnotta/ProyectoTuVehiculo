@@ -25,6 +25,12 @@ def camiones(request):
     return render(request,'camiones.html',context=context)
 
 
+
+
+
+
+
+
 def cargar_autos(request):
     if request.method == "GET":
         form = Autos_form()
@@ -79,6 +85,13 @@ def cargar_motos(request):
             context = {"new_moto":new_moto}
         return render (request,'cargar_motos.html',context=context)
 
+
+
+
+
+
+
+
 def buscar_vehiculo(request):
     print(request.GET)
     camiones = Camiones.objects.filter(marca_modelo__contains = request.GET["Search"])
@@ -86,6 +99,14 @@ def buscar_vehiculo(request):
     motos = Motos.objects.filter(marca_modelo__contains = request.GET["Search"])
     context = {"autos":autos, "camiones": camiones, "motos":motos}
     return render(request,"buscar_vehiculo.html", context = context)
+
+
+
+
+
+
+
+
 
 
 def autos_detalles(request, pk):
@@ -115,3 +136,41 @@ def camiones_detalles(request, pk):
     except:
         context = {'problema':'Hay un problema en cargar este detalle, disculpe las molestias'}
         return render (request,'camiones.html',context=context)    
+
+
+
+
+
+def eliminar_auto (request,pk):
+    try:
+        auto= Autos.objects.get (id=pk)
+        auto.delete()
+        context = {'mensaje':"El auto se ha eliminado correctamente"}
+        return render(request,'autos.html',context=context)
+    except:
+        context = {'problema':'Hay un problema en eliminar este vehiculo, disculpe las molestias'}
+        return render (request,'autos.html',context=context)  
+
+
+def eliminar_moto (request,pk):
+    try:
+        moto= Motos.objects.get (id=pk)
+        moto.delete()
+        context = {'mensaje':"La moto se ha eliminado correctamente"}
+        return render(request,'motos.html',context=context)
+    except:
+        context = {'problema':'Hay un problema en eliminar este vehiculo, disculpe las molestias'}
+        return render (request,'motos.html',context=context) 
+
+def eliminar_camion (request,pk):
+    try:
+        camion= Camiones.objects.get (id=pk)
+        camion.delete()
+        context = {'mensaje':"El camion se ha eliminado correctamente"}
+        return render(request,'camiones.html',context=context)
+    except:
+        context = {'problema':'Hay un problema en eliminar este vehiculo, disculpe las molestias'}
+        return render (request,'camion.html',context=context)  
+
+
+
