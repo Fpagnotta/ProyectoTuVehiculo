@@ -4,36 +4,33 @@ from django.db import models
 
 # Create your models here.
 
-class Autos(models.Model):
-    marca_modelo = models.CharField (max_length=50)
-    año = models.FloatField()
+class Cars(models.Model):
+    brand = models.CharField (max_length=50)
+    year = models.FloatField()
     transmision = models.BooleanField(blank=True)
     sku = models.CharField(max_length=30)
-    precio = models.FloatField()
+    price = models.FloatField()
         
     class Meta:
-        verbose_name ='Auto'
-        verbose_name_plural ='Autos'
-    
-    
-class Motos(models.Model):
-    marca_modelo = models.CharField(max_length=50)
-    año = models.FloatField()
-    tipo = models.CharField(max_length=20)
+        verbose_name ='car'
+        verbose_name_plural ='cars'     
+class Motorcycles(models.Model):
+    brand = models.CharField(max_length=50)
+    year = models.FloatField()
+    type = models.CharField(max_length=20)
     sku = models.CharField(max_length=30)
-    precio = models.FloatField()
+    price = models.FloatField()
 
     class Meta:
-        verbose_name ='Moto'
-        verbose_name_plural ='Motos'
-
-class Camiones(models.Model):
-    marca_modelo = models.CharField (max_length=50)
-    año = models.FloatField()
-    capacidad = models.CharField(max_length=30)
+        verbose_name ='motorcyle'
+        verbose_name_plural ='motorcycles'
+class Trucks(models.Model):
+    brand = models.CharField (max_length=50)
+    year = models.FloatField()
+    capacity = models.CharField(max_length=30)
     sku = models.CharField (max_length=30)
-    precio = models.FloatField ()
+    price = models.FloatField ()
 
     class Meta:
-        verbose_name ='Camion'
-        verbose_name_plural ='Camiones'
+        verbose_name ='truck'
+        verbose_name_plural ='trucks'

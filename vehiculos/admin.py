@@ -1,19 +1,15 @@
 from django.contrib import admin
-from vehiculos.models import Autos,Motos,Camiones
-from vehiculos.views import autos,motos,camiones 
+from vehiculos.models import Cars,Motorcycles,Trucks
 
 # Register your models here.
-
-
-
-@admin.register(Autos)
-class AutosAdmin(admin.ModelAdmin):
-    list_display = ['marca_modelo','año','transmision','precio','sku']
+@admin.register(Cars)
+class CarAdmin(admin.ModelAdmin):
+    list_display = ['brand','year','transmision','price','sku']
     
-@admin.register(Motos)
-class MotosAdmin(admin.ModelAdmin):
-    list_display = ['marca_modelo','año','tipo','precio','sku']    
+@admin.register(Motorcycles)
+class MotorcycleAdmin(admin.ModelAdmin):
+    list_display = ['brand','year','type','price','sku']    
 
-@admin.register(Camiones)
-class CamionesAdmin(admin.ModelAdmin):
-    list_display = ['marca_modelo','año','capacidad','precio','sku']
+@admin.register(Trucks)
+class TruckAdmin(admin.ModelAdmin):
+    list_display = ['brand','year','capacity','price','sku']

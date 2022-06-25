@@ -27,19 +27,19 @@
                       Vehiculos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/vehiculos/autos">Autos</a></li>
-                      <li><a class="dropdown-item" href="/vehiculos/motos">Motos</a></li>
-                      <li><a class="dropdown-item" href="/vehiculos/camiones">Camiones</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/cars">Cars</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/motorcycles">Motorcycles</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/trucks">Trucks</a></li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Cargar Vehiculos
+                      Create Vehicle
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/vehiculos/cargar_autos">Autos</a></li>
-                      <li><a class="dropdown-item" href="/vehiculos/cargar_motos">Motos</a></li>
-                      <li><a class="dropdown-item" href="/vehiculos/cargar_camiones">Camiones</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/create-car">Cars</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/create-motorcycle">Motorcycles</a></li>
+                      <li><a class="dropdown-item" href="/vehiculos/create-truck">Trucks</a></li>
                     </ul>
                   </li>
                   {% if request.user.is_authenticated %}
@@ -56,8 +56,8 @@
                   {% endif %}
                 </ul>
                 <form class="d-flex" role="search" action="/vehiculos/buscar_vehiculos/" method="GET">
-                  <input class="form-control me-2" type="text" placeholder="Nombre del Vehiculo" name="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  <input class="form-control me-2" type="text" placeholder="Vehicle Brand" name="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
               </div>
             </div>

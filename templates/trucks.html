@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block info %}
+  <h1>Camiones</h1>
+
+  {{mensaje}}
+
+  {% for truck in Trucks %}
+ <div class="">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Marca y modelo:{{truck.brand}}</h5>
+        <p class="card-text">Año de fabricacion:{{truck.year}}.</p>
+        <p class="card-text">Precio:${{truck.price}}.</p>
+        <p class="card-text">Capacidad de transporte:{{truck.capacity}}.</p>
+        <a href="/vehiculos/camiones_detalles/{{truck.id}}/" class="btn btn-primary">detalles</a>
+        <a href="/vehiculos/eliminar_camion/{{truck.id}}/" class="btn btn-danger">eliminar</a>
+      </div>
+    </div>
+</div> 
+  {% endfor %}    
+
+{% endblock %}
+

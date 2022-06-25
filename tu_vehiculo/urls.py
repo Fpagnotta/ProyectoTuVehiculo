@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 from tu_vehiculo.views import index, login_view, logout_view
-from vehiculos.views import autos,motos,camiones
+from vehiculos.views import list_car, list_motorcycle, list_truck
 
 
 

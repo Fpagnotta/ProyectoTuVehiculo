@@ -1,5 +1,5 @@
 from django import forms
-from vehiculos.models import Autos, Camiones, Motos
+from vehiculos.models import Cars, Motorcycles, Trucks
 
 """ class Autos_form(forms.Form):
     marca_modelo = forms.CharField (max_length=50)
@@ -22,18 +22,16 @@ class Motos_form(forms.Form):
     sku = forms.CharField(max_length=30)
     precio = forms.FloatField() """
 
-class Autos_form(forms.ModelForm):
+class Car_form(forms.ModelForm):
     class Meta:
-        model = Autos
+        model = Cars
+        fields = "__all__" 
+class Truck_form(forms.ModelForm):
+    class Meta:
+        model = Trucks
         fields = "__all__"
-    
-class Camiones_form(forms.ModelForm):
+class Motorcycle_form(forms.ModelForm):
     class Meta:
-        model = Camiones
-        fields = "__all__"
-
-class Motos_form(forms.ModelForm):
-    class Meta:
-        model = Motos
+        model = Motorcycles
         fields = "__all__"
     

@@ -1,114 +1,98 @@
 from multiprocessing import context
 from django.shortcuts import render
+from django.urls import reverse
 from django.http import HttpResponse
-from vehiculos.models import Autos,Motos,Camiones
-from vehiculos.forms import Autos_form, Camiones_form, Motos_form
+from django.views.generic import UpdateView
+from vehiculos.models import Cars,Motorcycles,Trucks
+from vehiculos.forms import Car_form, Truck_form, Motorcycle_form
 
 # Create your views here.
 
 
-def autos(request):
-    autos = Autos.objects.all()
-    context={'autos':autos}
-    return render(request,'autos.html',context=context)
+def list_car(request):
+    cars= Cars.objects.all()
+    context={'cars':cars}
+    return render(request,'cars.html',context=context)
 
+def list_motorcycle(request):
+    motorcycles = Motorcycles.objects.all()                          
+    context={'motorcycles':motorcycles}
+    return render(request,'motorcycles.html',context=context)
 
-def motos(request):
-    motos = Motos.objects.all()                          
-    context={'motos':motos}
-    return render(request,'motos.html',context=context)
-
-
-def camiones(request):
-    camiones = Camiones.objects.all()        
-    context={'camiones':camiones}
-    return render(request,'camiones.html',context=context)
-
+def list_truck(request):
+    trucks = Trucks.objects.all()        
+    context= {'trucks': trucks}
+    return render(request,'trucks.html',context=context)
 
 
 
-
-
-
-
-def cargar_autos(request):
+# -------- CREATE ELEMENT --------
+def create_car(request):
     if request.method == "GET":
-        form = Autos_form()
+        form = Car_form()
         context = {"form":form}
-        return render (request,'cargar_autos.html',context=context)
+        return render (request,'create_car.html',context=context)
     else:
-        form = Autos_form(request.POST)
+        form = Car_form(request.POST)
         if form.is_valid():
-            new_auto = Autos.objects.create(
-                 marca_modelo = form.cleaned_data["marca_modelo"],
-                 año = form.cleaned_data["año"],
+            new_car = Cars.objects.create(
+                 brand = form.cleaned_data["brand"],
+                 year = form.cleaned_data["year"],
                  transmision = form.cleaned_data["transmision"],
                  sku = form.cleaned_data["sku"],
-                 precio = form.cleaned_data["precio"],
+                 price = form.cleaned_data["price"],
             )
-            context = {"new_auto":new_auto}
-        return render (request,'cargar_autos.html',context=context)
+            context = {"new_car":new_car}
+        return render (request,'create_car.html',context=context)
 
-def cargar_camiones(request):
+def create_truck(request):
     if request.method == "GET":
-        form = Camiones_form()
+        form = Truck_form()
         context = {"form":form}
-        return render (request,'cargar_camiones.html',context=context)
+        return render (request,'create_truck.html',context=context)
     else:
-        form = Camiones_form(request.POST)
+        form = Truck_form(request.POST)
         if form.is_valid():
-            new_camion = Camiones.objects.create(
-                 marca_modelo = form.cleaned_data["marca_modelo"],
-                 año = form.cleaned_data["año"],
-                 capacidad = form.cleaned_data["capacidad"],
+            new_truck = Trucks.objects.create(
+                 brand = form.cleaned_data["brand"],
+                 year = form.cleaned_data["year"],
+                 capacity = form.cleaned_data["capacity"],
                  sku = form.cleaned_data["sku"],
-                 precio = form.cleaned_data["precio"],
+                 price = form.cleaned_data["price"],
             )
-            context = {"new_camion":new_camion}
-        return render (request,'cargar_camiones.html',context=context)
+            context = {"new_truck":new_truck}
+        return render (request,'create_truck.html',context=context)
  
-def cargar_motos(request):
+def create_motorcycle(request):
     if request.method == "GET":
-        form = Motos_form()
+        form = Motorcycle_form()
         context = {"form":form}
-        return render (request,'cargar_motos.html',context=context)
+        return render (request,'create_motorcycle.html',context=context)
     else:
-        form = Motos_form(request.POST)
+        form = Motorcycle_form(request.POST)
         if form.is_valid():
-            new_moto = Motos.objects.create(
-                 marca_modelo = form.cleaned_data["marca_modelo"],
-                 año = form.cleaned_data["año"],
-                 tipo = form.cleaned_data["tipo"],
+            new_motorcycle = Motorcycles.objects.create(
+                 brand = form.cleaned_data["brand"],
+                 year = form.cleaned_data["year"],
+                 type = form.cleaned_data["type"],
                  sku = form.cleaned_data["sku"],
-                 precio = form.cleaned_data["precio"],
+                 price = form.cleaned_data["price"],
             )
-            context = {"new_moto":new_moto}
-        return render (request,'cargar_motos.html',context=context)
+            context = {"new_motorcycle":new_motorcycle}
+        return render (request,'create_motorcycle.html',context=context)
 
 
-
-
-
-
-
-
-def buscar_vehiculo(request):
+# -------- SEARCH ---------
+def search_vehicle(request):
     print(request.GET)
-    camiones = Camiones.objects.filter(marca_modelo__contains = request.GET["Search"])
-    autos = Autos.objects.filter(marca_modelo__contains = request.GET["Search"])
-    motos = Motos.objects.filter(marca_modelo__contains = request.GET["Search"])
-    context = {"autos":autos, "camiones": camiones, "motos":motos}
-    return render(request,"buscar_vehiculo.html", context = context)
+    truck = Trucks.objects.filter(brand__contains = request.GET["Search"])
+    car = Cars.objects.filter(brand__contains = request.GET["Search"])
+    motorcycle = Motorcycles.objects.filter(brand__contains = request.GET["Search"])
+    context = {"car": car, "truck": truck, "motorcycle": motorcycle}
+    return render(request,"search_vehicle.html", context = context)
 
 
-
-
-
-
-
-
-
-
+# ------- DETAIL ELEMENT -------
 def autos_detalles(request, pk):
     try:
         autos = Autos.objects.get(id=pk)
@@ -117,7 +101,6 @@ def autos_detalles(request, pk):
     except:
         context = {'problema':'Hay un problema en cargar este detalle, disculpe las molestias'}
         return render (request,'autos.html',context=context)    
-
 
 def motos_detalles(request, pk):
     try:
@@ -138,9 +121,7 @@ def camiones_detalles(request, pk):
         return render (request,'camiones.html',context=context)    
 
 
-
-
-
+# ------ DELETE ELEMENT -------
 def eliminar_auto (request,pk):
     try:
         auto= Autos.objects.get (id=pk)
@@ -150,7 +131,6 @@ def eliminar_auto (request,pk):
     except:
         context = {'problema':'Hay un problema en eliminar este vehiculo, disculpe las molestias'}
         return render (request,'autos.html',context=context)  
-
 
 def eliminar_moto (request,pk):
     try:
@@ -172,5 +152,11 @@ def eliminar_camion (request,pk):
         context = {'problema':'Hay un problema en eliminar este vehiculo, disculpe las molestias'}
         return render (request,'camion.html',context=context)  
 
-
-
+# ------- UPDATE ELEMENT -----
+class update_vehicle(UpdateView):
+    model = Cars, Motorcycles, Trucks
+    template_name = "update_vehicle.html"
+    fields = ["price"]
+    
+    def get_success_url(self):
+        return reverse("autos_detalles.html", "motos_detalles.html", "camiones_detalles.html", kwargs= {"pk": self.object.pk})

@@ -1,16 +1,16 @@
 
 from django.urls import path
-from vehiculos.views import autos, cargar_motos,motos,camiones,cargar_autos,cargar_camiones,cargar_motos,buscar_vehiculo,autos_detalles,camiones_detalles,motos_detalles,eliminar_auto,eliminar_camion,eliminar_moto
+from vehiculos.views import list_car, list_motorcycle, list_truck, create_car, create_motorcycle, create_truck,search_vehicle,autos_detalles,camiones_detalles,motos_detalles,eliminar_auto,eliminar_camion,eliminar_moto, update_vehicle
 
 
 urlpatterns = [
-    path('autos/',autos,name = "Autos"),
-    path('motos/',motos,name ="Motos"),
-    path('camiones/',camiones,name ="Camiones"),
-    path('cargar_autos/',cargar_autos,name="Cargar-Autos"),
-    path('cargar_camiones/',cargar_camiones,name="Cargar-Camiones"),
-    path('cargar_motos/',cargar_motos,name="Cargar-Motos"),
-    path('buscar_vehiculos/',buscar_vehiculo,name="Buscar-vehiculos"),
+    path('cars/',list_car,name = "Cars"),
+    path('motorcycles/',list_motorcycle,name ="Motorcycles"),
+    path('trucks/',list_truck,name ="Trucks"),
+    path('create-car/', create_car,name="Create_Car"),
+    path('create-truck/', create_truck,name="Create_Truck"),
+    path('create-motorcycle/',create_motorcycle,name="Create_Motorcycle"),
+    path('search-vehicle/',search_vehicle,name="Search_Vehicle"),
     path('autos_detalles/<int:pk>/',autos_detalles,name="Detalle-Autos"),
     path('camiones_detalles/<int:pk>/',camiones_detalles,name="Detalle-Autos"),
     path('motos_detalles/<int:pk>/',motos_detalles,name="Detalle-Autos"),
