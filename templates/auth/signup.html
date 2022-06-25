@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block info %} 
+
+<div class="alert alert-danger" role="alert">
+    {{errors}}
+  </div>
+
+
+<h2>Complete the following fields to signup </h2>
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{form.as_p}}
+  </div>
+  <input type="submit" , value="Submit" />
+</form>
+
+
+{% endblock %}
