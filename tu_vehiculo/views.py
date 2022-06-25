@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from tu_vehiculo.forms import User_registration_form
 
 def index(request):
     print(request.user)
@@ -49,7 +50,7 @@ def logout_view(request):
 
 def signup_view(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = User_registration_form(request.POST)
         
         if form.is_valid:
             form.save()
@@ -61,11 +62,11 @@ def signup_view(request):
             return render(request, "index.html", context = context)
         else:
             errors = form.errors
-            form = UserCreationForm()
+            form = User_registration_form()
             context = {"errors": errors, "form": form}
             return render(request, "auth/signup.html", context = context) 
     else:
-        form = UserCreationForm()
+        form = User_registration_form()
         context = {"form": form}
         return render(request, "auth/signup.html", context = context)
         
