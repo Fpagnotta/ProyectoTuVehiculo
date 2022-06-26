@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block info %}
+  <h1>Motos</h1>
+
+  {% for motorcycle in object_list %}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Brand:{{motorcycle.brand}}</h5>
+      <p class="card-text">Year of fabrication:{{motorcycle.year}}.</p>
+      <p class="card-text">Price: ${{motorcycle.price}}.</p>
+      <p class="card-text">Type: {{motorcycle.type}}.</p>
+      <a href="/vehicles/motorcycle-details/{{motorcycle.id}}/" class="btn btn-primary">Details</a>
+      <a href="/vehicles/delete-motorcycle/{{motorcycle.id}}/" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+  {% endfor %}    
+
+{% endblock %}

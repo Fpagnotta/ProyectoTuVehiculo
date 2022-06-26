@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block info %}
-{% if form %}
-  <h1>Create Car</h1>
+<h1>Create Car</h1>
 
 
 <form method="POST" action="">
@@ -13,16 +12,5 @@
   <input type="submit",value="Enviar">
 </form>
 
-{% elif new_car %}
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{new_car.brand}}</h5>
-    <p class="card-text">{{new_car.year}}.</p>
-    <p class="card-text">{{new_car.price}}.</p>
-  </div>
-</div>
-
-{% endif%}
 {% endblock %}
 

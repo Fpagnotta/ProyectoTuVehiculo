@@ -1,7 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from tu_vehiculo.forms import User_registration_form
 

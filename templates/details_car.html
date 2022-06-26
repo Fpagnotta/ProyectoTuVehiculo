@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block info %}
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Brand: {{object.brand}}</h5>
+    <p class="card-text">Year of fabrication: {{object.year}}.</p>
+    <p class="card-text">Price: ${{object.price}}.</p>
+    <p class="card-text">Authomatic Transmision?: {{object.transmision}}.</p>
+  </div>
+<a href="" class="btn btn-primary">Buy</a>
+</div>
+
+
+{% endblock %}

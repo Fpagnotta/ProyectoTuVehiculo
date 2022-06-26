@@ -10,6 +10,7 @@ class Cars(models.Model):
     transmision = models.BooleanField(blank=True)
     sku = models.CharField(max_length=30)
     price = models.FloatField()
+    is_active = models.BooleanField(default=True)
         
     class Meta:
         verbose_name ='car'
@@ -20,6 +21,7 @@ class Motorcycles(models.Model):
     type = models.CharField(max_length=20)
     sku = models.CharField(max_length=30)
     price = models.FloatField()
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name ='motorcyle'
@@ -29,7 +31,8 @@ class Trucks(models.Model):
     year = models.FloatField()
     capacity = models.CharField(max_length=30)
     sku = models.CharField (max_length=30)
-    price = models.FloatField ()
+    price = models.FloatField()
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name ='truck'

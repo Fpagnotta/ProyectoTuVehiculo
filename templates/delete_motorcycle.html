@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Delete Vehicle
+{% endblock %}
+
+
+{% block info %}
+<h3 style="color: red">You are about to eliminate {{object.brand}}, are you sure?</h3>
+
+<form method="POST" action="">
+  {% csrf_token %}
+  <button class="btn btn-danger" type="submit">Delete</button>
+</form>
+
+{% endblock %}
