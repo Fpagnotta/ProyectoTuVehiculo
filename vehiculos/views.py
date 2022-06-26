@@ -222,29 +222,44 @@ class detail_truck_view(DetailView):
     
     
 # ------- UPDATE ELEMENT WITH CLASS --------------
-class update_vehicle(UpdateView):
-    model = Cars, Motorcycles, Trucks
-    template_name = "update_vehicle.html"
-    fields = ["price"]
+class update_car_view(LoginRequiredMixin,UpdateView):
+    model = Cars
+    template_name = "update_car.html"
+    fields = "__all__"
     
     def get_success_url(self):
-        return reverse("details_car.html", "details_motorcycle.html", "details_truck.html", kwargs= {"pk": self.object.pk})
+        return reverse("details_car.html", kwargs= {"pk": self.object.pk})
 
+class update_motorcycle_view(LoginRequiredMixin,UpdateView):
+    model = Motorcycles
+    template_name = "update_motorcycle.html"
+    fields = "__all__"
+    
+    def get_success_url(self):
+        return reverse("details_motorcycle.html", kwargs= {"pk": self.object.pk})
+
+class update_truck_view(LoginRequiredMixin,UpdateView):
+    model = Trucks
+    template_name = "update_truck.html"
+    fields = "__all__"
+    
+    def get_success_url(self):
+        return reverse("details_truck.html", kwargs= {"pk": self.object.pk})
 
 # ------- DELETE ELEMENT WITH CLASS --------------
-class delete_car_view(DeleteView):
+class delete_car_view(LoginRequiredMixin,DeleteView):
     model = Cars
     template_name = "delete_car.html"
     
     def get_success_url(self):
         return reverse("cars")
-class delete_motorcycle_view(DeleteView):
+class delete_motorcycle_view(LoginRequiredMixin,DeleteView):
     model = Motorcycles
     template_name = "delete_motorcycle.html"
     
     def get_success_url(self):
         return reverse("motorcycles")
-class delete_truck_view(DeleteView):
+class delete_truck_view(LoginRequiredMixin,DeleteView):
     model = Trucks
     template_name = "delete_truck.html"
     

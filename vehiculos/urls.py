@@ -1,6 +1,6 @@
 
 from django.urls import path
-from vehiculos.views import delete_car_view, list_car, list_motorcycle, list_truck, create_car_view, create_motorcycle_view, create_truck_view,search_vehicle, detail_car_view, detail_motorcycle_view,detail_truck_view,delete_car_view,delete_motorcycle_view,delete_truck_view, update_vehicle
+from vehiculos.views import delete_car_view, list_car, list_motorcycle, list_truck, create_car_view, create_motorcycle_view, create_truck_view,search_vehicle, detail_car_view, detail_motorcycle_view,detail_truck_view,delete_car_view,delete_motorcycle_view,delete_truck_view, update_car_view, update_motorcycle_view,update_truck_view
 
 
 urlpatterns = [
@@ -17,7 +17,9 @@ urlpatterns = [
     path('delete-car/<int:pk>/',delete_car_view.as_view(),name="delete_car"),
     path('delete-motorcycle/<int:pk>/',delete_motorcycle_view.as_view(),name="detele_motorcycle"),
     path('delete-truck/<int:pk>/',delete_truck_view.as_view(),name="delete_truck"),
-    path('update-vehicle/<int:pk>/',update_vehicle.as_view(),name="update_vehicle"),
+    path('update-car/<int:pk>/',update_car_view.as_view(),name="update_car"),
+    path('update-motorcycle/<int:pk>/',update_motorcycle_view.as_view(),name="update_motorcycle"),
+    path('update-truck/<int:pk>/',update_truck_view.as_view(),name="update_trucl"),
 
 ]
 

@@ -9,8 +9,12 @@
       <p class="card-text">Year of fabrication:{{object.year}}.</p>
       <p class="card-text">Price: ${{object.price}}.</p>
       <p class="card-text">Type: {{object.type}}.</p>
+      {% if request.user.is_authenticated %}
+      <a href="/vehicles/update-motorcycle/{{object.id}}/" class="btn btn-primary">Edit</a>
+      <a href="/vehicles/delete-motorcycle/{{object.id}}/" class="btn btn-primary">Delete</a>
+      {% else %}
       <a href="" class="btn btn-primary">Buy</a>
- 
+      {% endif %}
     </div>
   </div>
 
