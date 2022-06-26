@@ -178,7 +178,7 @@ def search_vehicle(request):
 
 
 # --------- CREATE ELEMENT WITH CLASS ----
-class create_car_view(CreateView):
+class create_car_view(LoginRequiredMixin,CreateView):
     model = Cars
     template_name = "create_car.html"
     fields = "__all__"
@@ -186,7 +186,7 @@ class create_car_view(CreateView):
     def get_success_url(self):
         return reverse("details_car.html", kwargs={"pk": self.object.pk})
 
-class create_motorcycle_view(CreateView):
+class create_motorcycle_view(LoginRequiredMixin,CreateView):
     model = Motorcycles
     template_name = "create_motorcycle.html"
     fields = "__all__"
@@ -194,7 +194,7 @@ class create_motorcycle_view(CreateView):
     def get_success_url(self):
         return reverse("details_motorcycle.html", kwargs={"pk": self.object.pk})
 
-class create_truck_view(CreateView):
+class create_truck_view(LoginRequiredMixin,CreateView):
     model = Trucks
     template_name = "create_truck.html"
     fields = "__all__"
