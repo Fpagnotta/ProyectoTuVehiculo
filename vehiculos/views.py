@@ -165,8 +165,6 @@ class list_truck(ListView):
 
 
 
-
-
 # -------- SEARCH ---------
 def search_vehicle(request):
     print(request.GET)
