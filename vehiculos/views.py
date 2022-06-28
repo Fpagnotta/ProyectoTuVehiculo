@@ -226,7 +226,7 @@ class update_car_view(LoginRequiredMixin,UpdateView):
     fields = "__all__"
     
     def get_success_url(self):
-        return reverse("details_car.html", kwargs= {"pk": self.object.pk})
+        return reverse("car_details", kwargs= {"pk": self.object.pk})
 
 class update_motorcycle_view(LoginRequiredMixin,UpdateView):
     model = Motorcycles
@@ -234,7 +234,7 @@ class update_motorcycle_view(LoginRequiredMixin,UpdateView):
     fields = "__all__"
     
     def get_success_url(self):
-        return reverse("details_motorcycle.html", kwargs= {"pk": self.object.pk})
+        return reverse("motorcycle_details", kwargs= {"pk": self.object.pk})
 
 class update_truck_view(LoginRequiredMixin,UpdateView):
     model = Trucks
@@ -242,7 +242,7 @@ class update_truck_view(LoginRequiredMixin,UpdateView):
     fields = "__all__"
     
     def get_success_url(self):
-        return reverse("details_truck.html", kwargs= {"pk": self.object.pk})
+        return reverse("truck_details", kwargs= {"pk": self.object.pk})
 
 # ------- DELETE ELEMENT WITH CLASS --------------
 class delete_car_view(LoginRequiredMixin,DeleteView):
