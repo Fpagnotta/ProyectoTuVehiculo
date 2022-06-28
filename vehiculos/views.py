@@ -182,7 +182,7 @@ class create_car_view(LoginRequiredMixin,CreateView):
     fields = "__all__"
 
     def get_success_url(self):
-        return reverse("details_car.html", kwargs={"pk": self.object.pk})
+        return reverse("car_details", kwargs={"pk": self.object.pk})
 
 class create_motorcycle_view(LoginRequiredMixin,CreateView):
     model = Motorcycles
@@ -190,7 +190,7 @@ class create_motorcycle_view(LoginRequiredMixin,CreateView):
     fields = "__all__"
 
     def get_success_url(self):
-        return reverse("details_motorcycle.html", kwargs={"pk": self.object.pk})
+        return reverse("motorcycle_details", kwargs={"pk": self.object.pk})
 
 class create_truck_view(LoginRequiredMixin,CreateView):
     model = Trucks
@@ -198,7 +198,7 @@ class create_truck_view(LoginRequiredMixin,CreateView):
     fields = "__all__"
 
     def get_success_url(self):
-        return reverse("details_truck.html", kwargs={"pk": self.object.pk})
+        return reverse("truck_details", kwargs={"pk": self.object.pk})
 
 
 
