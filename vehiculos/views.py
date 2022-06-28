@@ -168,9 +168,9 @@ class list_truck(ListView):
 # -------- SEARCH ---------
 def search_vehicle(request):
     print(request.GET)
-    truck = Trucks.objects.filter(brand__contains = request.GET["Search"])
-    car = Cars.objects.filter(brand__contains = request.GET["Search"])
-    motorcycle = Motorcycles.objects.filter(brand__contains = request.GET["Search"])
+    truck = Trucks.objects.filter(brand__icontains = request.GET["Search"])
+    car = Cars.objects.filter(brand__icontains = request.GET["Search"])
+    motorcycle = Motorcycles.objects.filter(brand__icontains = request.GET["Search"])
     context = {"car": car, "truck": truck, "motorcycle": motorcycle}
     return render(request,"search_vehicle.html", context = context)
 

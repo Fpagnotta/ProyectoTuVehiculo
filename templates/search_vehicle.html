@@ -5,12 +5,12 @@
   <h1>BUSQUEDA DE VEHICULOS</h1>
 
 
-{% for auto in autos%}
+{% for car in object_list %}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">{{auto.marca_modelo}}</h5>
-    <p class="card-text">{{auto.año}}.</p>
-    <p class="card-text">{{auto.precio}}.</p>
+    <h5 class="card-title">Brand: {{object.brand}}</h5>
+    <p class="card-text">Year of fabrication: {{object.year}}.</p>
+    <p class="card-text">Price: ${{object.price}}.</p>
   </div>
 </div>
 

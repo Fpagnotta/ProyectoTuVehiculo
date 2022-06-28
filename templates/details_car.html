@@ -12,8 +12,8 @@
   </div>
 {% if request.user.is_authenticated %}
 
-<a href="/vehicles/update-car/{{object.id}}/" class="btn btn-primary">Edit</a>
-<a href="/vehicles/delete-car/{{object.id}}/" class="btn btn-primary">Delete</a>
+<a href="/vehicles/update-car/{{object.id}}/" class="btn btn-success">Edit</a>
+<a href="/vehicles/delete-car/{{object.id}}/" class="btn btn-danger">Delete</a>
 {% else %}
 <a href="" class="btn btn-primary">Buy</a>
 {% endif %}
