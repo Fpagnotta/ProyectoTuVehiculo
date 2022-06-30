@@ -5,4 +5,10 @@ from django.contrib.auth.models import User
 
 class profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE, related_name='profile')
-    phone = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=20,blank=True)
+    last_name = models.CharField(max_length=20,blank=True)
+    phone = models.CharField(max_length=25,blank=True)
+    adress = models.CharField(max_length=30,blank=True)
+    city = models.CharField (max_length=30,blank=True)
+    gender = models.CharField (max_length=30,blank=True)
+    email = models.CharField (max_length=50,blank=True)
