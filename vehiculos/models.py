@@ -1,3 +1,4 @@
+from email.mime import image
 from pyexpat import model
 from tabnanny import verbose
 from django.db import models
@@ -11,6 +12,7 @@ class Cars(models.Model):
     sku = models.CharField(max_length=30)
     price = models.FloatField()
     is_active = models.BooleanField(default=True)
+    image = models.ImageField (upload_to = 'cars',blank=True, null=True)
         
     class Meta:
         verbose_name ='car'
@@ -26,6 +28,7 @@ class Motorcycles(models.Model):
     sku = models.CharField(max_length=30)
     price = models.FloatField()
     is_active = models.BooleanField(default=True)
+    image = models.ImageField (upload_to = 'motorcycles',blank=True, null=True)
 
     class Meta:
         verbose_name ='motorcyle'
@@ -41,6 +44,7 @@ class Trucks(models.Model):
     sku = models.CharField (max_length=30)
     price = models.FloatField()
     is_active = models.BooleanField(default=True)
+    image = models.ImageField (upload_to = 'trucks',blank=True, null=True)
 
     class Meta:
         verbose_name ='truck'
