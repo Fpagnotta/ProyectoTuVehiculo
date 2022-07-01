@@ -3,8 +3,9 @@
 {% block info %}
 
 
-<div class="">
+
   <div class="card" style="width: 18rem;">
+    <img src="{{trucks.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Brand:{{object.brand}}</h5>
       <p class="card-text">Year of fabrication:{{object.year}}.</p>
@@ -19,7 +20,7 @@
 
     </div>
   </div>
-</div> 
+
 
 
 {% endblock %}
