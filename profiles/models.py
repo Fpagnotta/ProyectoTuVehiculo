@@ -12,6 +12,7 @@ class profile(models.Model):
     city = models.CharField (max_length=30,blank=True)
     gender = models.CharField (max_length=30,blank=True)
     email = models.CharField (max_length=50,blank=True)
+    profile_image = models.ImageField(upload_to = 'profile_image')
     
     class Meta :
         verbose_name = 'Profile'
