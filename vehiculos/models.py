@@ -14,7 +14,11 @@ class Cars(models.Model):
         
     class Meta:
         verbose_name ='car'
-        verbose_name_plural ='cars'     
+        verbose_name_plural ='cars'
+
+    def __str__(self):
+        return self.brand
+
 class Motorcycles(models.Model):
     brand = models.CharField(max_length=50)
     year = models.FloatField()
@@ -26,6 +30,10 @@ class Motorcycles(models.Model):
     class Meta:
         verbose_name ='motorcyle'
         verbose_name_plural ='motorcycles'
+
+    def __str__(self):
+        return self.brand
+
 class Trucks(models.Model):
     brand = models.CharField (max_length=50)
     year = models.FloatField()
@@ -37,3 +45,6 @@ class Trucks(models.Model):
     class Meta:
         verbose_name ='truck'
         verbose_name_plural ='trucks'
+    
+    def __str__(self):
+        return self.brand

@@ -12,3 +12,11 @@ class profile(models.Model):
     city = models.CharField (max_length=30,blank=True)
     gender = models.CharField (max_length=30,blank=True)
     email = models.CharField (max_length=50,blank=True)
+    
+    class Meta :
+        verbose_name = 'Profile'
+        verbose_name_plural = "Profile's"
+
+    def __str__(self):
+        return self.first_name
+
