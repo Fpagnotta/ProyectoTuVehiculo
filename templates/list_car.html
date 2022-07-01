@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
 {% block info %}
-  <h1>Autos</h1>
+  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 50rem;">Autos</h1>
   
   {% for car in object_list %}
-<div class="card" style="width: 18rem;">
-  <img src="{{car.image.url}}" class="card-img-top" alt="...">
+
+  <div class="card" style="width: 18rem;margin-left: 40rem;">
+    <img src="{{car.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Brand: {{car.brand}}</h5>
-      <p class="card-text">Year of fabrication: {{car.year}}.</p>
+      <h5 class="card-title">Brand:{{car.brand}}</h5>
+      <p class="card-text">Year of fabrication:{{car.year}}.</p>
       <p class="card-text">Price: ${{car.price}}.</p>
-      <p class="card-text">Authomatic Transmision: {{car.transmision}}.</p>
+      <p class="card-text">Authomatic Transmision?: {{car.transmision}}.</p>
       <a href="/vehicles/car-details/{{car.id}}/" class="btn btn-info">See more</a>
     </div>
 </div>
+
+
   {% endfor %}
 
 {% endblock %}

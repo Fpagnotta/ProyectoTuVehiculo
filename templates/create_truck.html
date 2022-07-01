@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block info %}
-<h1>Create Truck</h1>
+<h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 45rem;">Create Truck</h1>
 
 
-<form method="POST" action="">
+<form method="POST" action="" style="font-family: Bebas Neue;margin-left: 45rem;margin-top:10rem;">
   {% csrf_token %}
   <table>
   {{form.as_table}}

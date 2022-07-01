@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block info %}
-  <h1>Motos</h1>
+  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 50rem;">Motos</h1>
 
   {% for motorcycle in object_list %}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;margin-left: 40rem;">
     <img src="{{motorcycle.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Brand:{{motorcycle.brand}}</h5>
