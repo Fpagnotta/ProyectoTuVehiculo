@@ -25,15 +25,18 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about_us/">about us</a>
+                  </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Vehicles
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/vehicles/cars/">Cars</a></li>
-                      <li><a class="dropdown-item" href="/vehicles/motorcycles">Motorcycles</a></li>
-                      <li><a class="dropdown-item" href="/vehicles/trucks">Trucks</a></li>
-                    </ul>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/vehicles/cars/">Cars</a></li>
+                        <li><a class="dropdown-item" href="/vehicles/motorcycles">Motorcycles</a></li>
+                        <li><a class="dropdown-item" href="/vehicles/trucks">Trucks</a></li>
+                      </ul>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,6 +67,7 @@
                   </li>
                   {% endif %}
                 </ul>
+
                 <form class="d-flex" role="search" action="/vehicles/search-vehicle/" method="GET">
                   <input class="form-control me-2" type="text" placeholder="Vehicle Brand" name="Search" aria-label="Search">
                   <button class="btn btn-success" type="submit">Search</button>

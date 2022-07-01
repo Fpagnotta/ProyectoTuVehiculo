@@ -9,6 +9,10 @@ def index(request):
     print(request.user.is_authenticated)
     return render(request,'index.html')
 
+def about_us(request):
+    print(request.user)
+    return render(request,'about_us.html')
+
 def login_view(request):
     
         # entra por POST, formulario completado

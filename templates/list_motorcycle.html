@@ -4,16 +4,18 @@
   <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 50rem;">Motos</h1>
 
   {% for motorcycle in object_list %}
-<div class="card" style="width: 18rem;margin-left: 40rem;">
-    <img src="{{motorcycle.image.url}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Brand:{{motorcycle.brand}}</h5>
-      <p class="card-text">Year of fabrication:{{motorcycle.year}}.</p>
-      <p class="card-text">Price: ${{motorcycle.price}}.</p>
-      <p class="card-text">Type: {{motorcycle.type}}.</p>
-      <a href="/vehicles/motorcycle-details/{{motorcycle.id}}/" class="btn btn-info">See more</a>
-    </div>
+
+<div class="card" style="width: 18rem;margin-left: 40rem;font-family: Bebas Neue">
+  <img src="{{motorcycle.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Brand:{{motorcycle.brand}}</h5>
+    <p class="card-text">Year of fabrication:{{motorcycle.year}}.</p>
+    <p class="card-text">Price: ${{motorcycle.price}}.</p>
+    <p class="card-text">Type: {{motorcycle.type}}.</p>
+    <a href="/vehicles/motorcycle-details/{{motorcycle.id}}/" class="btn btn-info">See more</a>
+  </div>
 </div>
+
   {% endfor %}    
 
 {% endblock %}
