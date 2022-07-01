@@ -2,37 +2,44 @@
 
 {% block info %}
 
-  <h1>BUSQUEDA DE VEHICULOS</h1>
+  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 45rem;">BUSQUEDA DE VEHICULOS</h1>
 
 
-{% for car in object_list %}
+{% for car in cars %}
+
 <div class="card" style="width: 18rem;">
+  <img src="{{car.image.url}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Brand: {{object.brand}}</h5>
-    <p class="card-text">Year of fabrication: {{object.year}}.</p>
-    <p class="card-text">Price: ${{object.price}}.</p>
+    <h5 class="card-title">Brand: {{car.brand}}</h5>
+    <p class="card-text">Year of fabrication: {{car.year}}</p>
+    <p class="card-text">Price: ${{car.price}}</p>
+    <a href="/vehicles/car-details/{{car.id}}/" class="btn btn-info">See more</a>
   </div>
 </div>
 
 {% endfor%}
 
-{% for camion in camiones%}
+{% for truck in trucks %}
 <div class="card" style="width: 18rem;">
+  <img src="{{truck.image.url}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{camion.marca_modelo}}</h5>
-    <p class="card-text">{{camion.año}}.</p>
-    <p class="card-text">{{camion.precio}}.</p>
+    <h5 class="card-title">Brand: {{truck.brand}}</h5>
+    <p class="card-text">Year of fabrication: {{truck.year}}</p>
+    <p class="card-text">Price: {{truck.price}}</p>
+    <a href="/vehicles/truck-details/{{truck.id}}/" class="btn btn-info">See more</a>
   </div>
 </div>
 
 {% endfor%}
 
-{% for moto in motos%}
+{% for motorcycle in motorcycles %}
 <div class="card" style="width: 18rem;">
+  <img src="{{motorcycle.image.url}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{moto.marca_modelo}}</h5>
-    <p class="card-text">{{moto.año}}.</p>
-    <p class="card-text">{{moto.precio}}.</p>
+    <h5 class="card-title">Brand: {{motorcycle.brand}}</h5>
+    <p class="card-text">Year of fabrication: {{motorcycle.year}}</p>
+    <p class="card-text">Price:{{motorcycle.year}}</p>
+    <a href="/vehicles/motorcycle-details/{{motorcycle.id}}/" class="btn btn-info">See more</a>
   </div>
 </div>
 

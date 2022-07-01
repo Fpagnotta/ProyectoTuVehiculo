@@ -171,7 +171,7 @@ def search_vehicle(request):
     truck = Trucks.objects.filter(brand__icontains = request.GET["Search"])
     car = Cars.objects.filter(brand__icontains = request.GET["Search"])
     motorcycle = Motorcycles.objects.filter(brand__icontains = request.GET["Search"])
-    context = {"car": car, "truck": truck, "motorcycle": motorcycle}
+    context = {"cars": car, "trucks": truck, "motorcycles": motorcycle}
     return render(request,"search_vehicle.html", context = context)
 
 

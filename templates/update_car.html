@@ -7,9 +7,9 @@ Update Vehicle
 
 {% block info %}
 {% if form %}
-  <h1>Complete the fields to update</h1>
+  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 40rem;">Complete the fields to update</h1>
 
-<form method="POST" action="">
+<form method="POST" action="" style="width: 18rem; margin-left: 45rem; margin-top: 10rem;font-family: Bebas Neue;">
   {% csrf_token %}
   <table>
   {{form.as_table}}
