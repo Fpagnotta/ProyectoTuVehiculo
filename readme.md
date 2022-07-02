@@ -12,4 +12,4 @@ Francisco se encargo de : iniciar proyecto, crear modelos, herencia de html,deco
 
 
 Florencia se encargo de : Formularios de crear vehiculos, buscador, actualizacion de models de vehiculos,creacion de login,logout y sign up,
-                          actualizacion de crud con class, restriccion a la carga de productos sin login
+                          actualizacion de crud con class, restriccion a la carga de productos sin logingit 
